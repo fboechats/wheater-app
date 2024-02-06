@@ -25,14 +25,6 @@ function App() {
     setShowCard(true)
   }, [])
 
-  useEffect(() => {
-    async function fetch() {
-      console.log()
-    }
-
-    fetch()
-  }, [])
-
   return (
     <div className="relative overflow-auto bg-gradient-to-b from-[#FF7D00] to-[#FFB400] font-sans">
       <div className="h-screen pt-12">
