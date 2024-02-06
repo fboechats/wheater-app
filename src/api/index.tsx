@@ -94,7 +94,7 @@ export const getCityForecast = async ({ city, days }: GetCityForecastProps): Pro
   return {
     temp: `${current.temp_c.toFixed()}°`,
     condition: current.condition.text,
-    feelslike: `${current.feelslike_c.toFixed()}°`,
+    feelslike: `${current.feelslike_c.toFixed()}°C`,
     humidity: `${current.humidity}%`,
     location: `${location.name}, ${location.region} - ${location.country}`,
     wind: `${current.wind_kph}km/h`,

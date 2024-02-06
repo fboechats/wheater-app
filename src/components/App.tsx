@@ -6,7 +6,7 @@ import { Card, CardProps } from './Card'
 function App() {
   const [majorCitiesTemp, setMajorCitiesTemp] = useState<GetMajorCitiesTempReturn>([])
   const [showCard, setShowCard] = useState(false)
-  const [cardInfo, setCardInfo] = useState<Omit<CardProps, 'onClose'>>(null)
+  const [cardInfo, setCardInfo] = useState<Omit<CardProps, 'onClose'> | null>(null)
 
   useEffect(() => {
     async function fetch() {
@@ -40,7 +40,7 @@ function App() {
           <h1 className="mb-24 text-center text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Previsão do tempo
           </h1>
-          {showCard && <Card {...cardInfo} onClose={() => setShowCard(false)} />}
+          {showCard && cardInfo && <Card {...cardInfo} onClose={() => setShowCard(false)} />}
           <div className="mt-4 flex flex-col items-center gap-8">
             <SearchInput placeholder="Insira aqui o nome da cidade" onSearch={searchCity} />
             <div className="w-full border-t-[1px] pl-10 pt-4 text-2xl font-bold tracking-tight text-white sm:text-4xl">

@@ -5,13 +5,13 @@ import { Card } from './index'
 describe('Card component', () => {
   const onCloseMock = vitest.fn() // Mock onClose function
   const location = 'New York'
-  const temp = 20
+  const temp = '20°C'
   const condition = 'Sunny'
-  const maxTemp = 25
-  const minTemp = 15
-  const feelslike = 22
-  const wind = 10
-  const humidity = 70
+  const maxTemp = '25°'
+  const minTemp = '15°'
+  const feelslike = '22°'
+  const wind = '10km/h'
+  const humidity = '70%'
   const nextDays = [
     { day: 'Tuesday', maxTemp: '25°', minTemp: '16°' },
     { day: 'Wednesday', maxTemp: '26°', minTemp: '17°' },
@@ -37,12 +37,12 @@ describe('Card component', () => {
     )
 
     expect(getByText(location)).toBeInTheDocument()
-    expect(getByText(`${temp}°C ${condition}`)).toBeInTheDocument()
-    expect(getByText(`${minTemp}°`)).toBeInTheDocument()
-    expect(getByText(`${maxTemp}°`)).toBeInTheDocument()
-    expect(getByText(`${feelslike}°`)).toBeInTheDocument()
-    expect(getByText(`${wind}km/h`)).toBeInTheDocument()
-    expect(getByText(`${humidity}%`)).toBeInTheDocument()
+    expect(getByText(`${temp} ${condition}`)).toBeInTheDocument()
+    expect(getByText(`${minTemp}`)).toBeInTheDocument()
+    expect(getByText(`${maxTemp}`)).toBeInTheDocument()
+    expect(getByText(`${feelslike}`)).toBeInTheDocument()
+    expect(getByText(`${wind}`)).toBeInTheDocument()
+    expect(getByText(`${humidity}`)).toBeInTheDocument()
 
     nextDays.forEach((day) => {
       expect(getByText(day.day)).toBeInTheDocument()

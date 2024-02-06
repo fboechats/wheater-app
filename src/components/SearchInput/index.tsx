@@ -27,7 +27,7 @@ export const SearchInput = ({ placeholder, onSearch }: SearchInputProps) => (
       name="city"
       placeholder={placeholder}
     />
-    <button type="submit" className="absolute right-0 top-0 mr-4 mt-5" onClick={console.log}>
+    <button name="Search" type="submit" className="absolute right-0 top-0 mr-4 mt-5" onClick={console.log}>
       <SearchIcon />
     </button>
   </form>
